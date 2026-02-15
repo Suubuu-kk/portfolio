@@ -25,8 +25,8 @@ export default function Contact() {
                             <span className="text-[var(--text-muted)] text-xs font-mono uppercase tracking-widest mb-2 block">Connect</span>
                             <div className="flex gap-4">
                                 <a href="https://www.linkedin.com/in/-kanhaiya/" target="_blank" rel="noopener noreferrer" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">LinkedIn</a>
-                                <a href="https://github.com/kanhaiyakumar" target="_blank" rel="noopener noreferrer" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">GitHub</a>
-                                <a href="https://twitter.com/kanhaiyakumar" target="_blank" rel="noopener noreferrer" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Twitter</a>
+                                <a href="https://github.com/ikanhaiyakumar" target="_blank" rel="noopener noreferrer" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">GitHub</a>
+                                <a href="https://twitter.com/kanhaiyakumar_" target="_blank" rel="noopener noreferrer" className="text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors">Twitter</a>
                             </div>
                         </div>
                     </div>
