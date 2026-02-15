@@ -1,8 +1,8 @@
 "use client";
 
 const socialLinks = [
-    { name: "Twitter", href: "https://twitter.com/kanhaiyakumar" },
-    { name: "GitHub", href: "https://github.com/kanhaiyakumar" },
+    { name: "Twitter", href: "https://twitter.com/kanhaiyakumar_" },
+    { name: "GitHub", href: "https://github.com/ikanhaiyakumar" },
     { name: "LinkedIn", href: "https://www.linkedin.com/in/-kanhaiya/" },
 ];
 
