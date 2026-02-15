@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+:root {
+  /* Glassmorphism AI — Light Mode */
+  --bg-background: #f0f0f8;
+  --bg-surface: rgba(255, 255, 255, 0.6);
+  --bg-surface-hover: rgba(255, 255, 255, 0.8);
+
+  --text-primary: #1a1a2e;
+  --text-secondary: #5a5a7a;
+  --text-muted: #8888a0;
+
+  --border-color: rgba(0, 0, 0, 0.06);
+  --border-hover: rgba(0, 0, 0, 0.12);
+
+  --accent: #0090ff;
+  --accent-secondary: #8b5cf6;
+  --accent-glow: rgba(0, 144, 255, 0.12);
+  --accent-glow-purple: rgba(139, 92, 246, 0.12);
+
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --card-shadow-hover: 0 4px 20px rgba(0, 144, 255, 0.08), 0 0 0 1px rgba(0, 144, 255, 0.1);
+}
+
+.dark {
+  --bg-background: #050510;
+  --bg-surface: rgba(255, 255, 255, 0.03);
+  --bg-surface-hover: rgba(255, 255, 255, 0.06);
+  --text-primary: #f0f0f5;
+  --text-secondary: #8888a0;
+  --text-muted: #5a5a72;
+  --border-color: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(255, 255, 255, 0.12);
+  --accent: #00d4ff;
+  --accent-secondary: #a855f7;
+  --card-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04);
+  --card-shadow-hover: 0 0 30px rgba(0, 212, 255, 0.08), 0 0 0 1px rgba(0, 212, 255, 0.15);
+}
+
+@theme inline {
+  --color-background: var(--bg-background);
+  --color-surface: var(--bg-surface);
+  --color-border: var(--border-color);
+  --font-sans: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: var(--bg-background);
+  color: var(--text-primary);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+/* ===================== */
+/*  GLASS CARD UTILITY   */
+/* ===================== */
+.glass-card {
+  background: var(--bg-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.glass-card:hover {
+  background: var(--bg-surface-hover);
+  border-color: var(--border-hover);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* ===================== */
+/*  GLOW TEXT UTILITY    */
+/* ===================== */
+.text-glow {
+  text-shadow: 0 0 40px rgba(0, 212, 255, 0.3);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 40px rgba(168, 85, 247, 0.3);
+}
+
+/* ===================== */
+/*  ANIMATED BG MESH     */
+/* ===================== */
+.bg-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.bg-mesh::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(0, 212, 255, 0.06) 0%, transparent 70%);
+  animation: meshFloat1 20s ease-in-out infinite;
+}
+
+.bg-mesh::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 50%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.05) 0%, transparent 70%);
+  animation: meshFloat2 25s ease-in-out infinite;
+}
+
+@keyframes meshFloat1 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(5%, 10%) scale(1.1);
+  }
+
+  66% {
+    transform: translate(-3%, -5%) scale(0.95);
+  }
+}
+
+@keyframes meshFloat2 {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate(-5%, -10%) scale(1.05);
+  }
+
+  66% {
+    transform: translate(3%, 5%) scale(1.1);
+  }
+}
+
+/* ===================== */
+/*  DOT PATTERN OVERLAY  */
+/* ===================== */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ===================== */
+/*  SEMANTIC OVERRIDES   */
+/* ===================== */
+.bg-zinc-950 {
+  background-color: var(--bg-background) !important;
+}
+
+.bg-zinc-900 {
+  background-color: var(--bg-surface) !important;
+}
+
+.text-white {
+  color: var(--text-primary) !important;
+}
+
+.text-zinc-500 {
+  color: var(--text-secondary) !important;
+}
+
+.text-zinc-400 {
+  color: var(--text-secondary) !important;
+}
+
+.border-zinc-800 {
+  border-color: var(--border-color) !important;
+}
+
+.border-zinc-700 {
+  border-color: var(--border-hover) !important;
+}
+
+.dark .text-white {
+  color: #f0f0f5 !important;
+}
