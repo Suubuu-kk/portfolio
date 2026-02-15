@@ -2,7 +2,7 @@
 
 const socialLinks = [
     { name: "Twitter", href: "https://twitter.com/kanhaiyakumar_" },
-    { name: "GitHub", href: "https://github.com/ikanhaiyakumar" },
+    { name: "GitHub", href: "https://github.com/ikanhaiyakr" },
     { name: "LinkedIn", href: "https://www.linkedin.com/in/-kanhaiya/" },
 ];
 
